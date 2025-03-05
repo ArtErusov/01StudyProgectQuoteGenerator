@@ -13,6 +13,11 @@ import { API_KEY } from './config.js';
 //     .catch(error => console.error('Error:', error));
 // }
 
+const buttonNewQuote = document.getElementById('new-quote');
+const textQuote = document.getElementById('quote');
+const authorQuote = document.getElementById('author');
+
+
 
 async function fetchQuote() {
     try {
@@ -25,9 +30,16 @@ async function fetchQuote() {
         });
         const data = await response.json(); 
         console.log(data);
+        console.log(data[0].quote);
+        console.log(data[0].author);
+        
+        textQuote.textContent = (data[0].quote);
+        authorQuote.textContent = (data[0].author);
     } catch (error) {
         console.error('Error:', error); 
     }
 }
 
-fetchQuote();
+
+buttonNewQuote.addEventListener("click", fetchQuote);
+
