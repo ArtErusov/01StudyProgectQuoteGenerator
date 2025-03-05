@@ -39,12 +39,33 @@ body{
 
 .button-container button{
     margin-top: 20px;
-    border: 1px solid #23232300;
-    padding: 8px 8px 6px 8px;
+    color: #ffffff;
+    padding: 8px 20px 6px;
     border-radius: 12px;
-    transition: 0.2s;
+    transition: 0.4s;
+    background-color: #232323;
+    box-shadow: 0 0.3rem #8f8f8f;
+}
+.button-container button svg{
+    fill: #ffffff;
 }
 
 .button-container button:hover{
-    border: 1px solid #232323;
+    color: #FEE677;
+}
+
+
+.button-container button:hover svg{
+    fill: #1C96E8;
+}
+
+.button-container button:active{
+    transform: translate(0, 0.3rem);
+    box-shadow:none;
+    background-color: #a5a5a5;
+    color: rgb(255, 255, 255);
+}
+
+.button-container button:active svg{
+    fill: #ffffff;
 }
